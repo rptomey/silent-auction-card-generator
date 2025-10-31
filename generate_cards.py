@@ -1,31 +1,17 @@
 import csv
 import qrcode
 import os
+import json
 from PIL import Image, ImageDraw, ImageFont
 
-# --- CONFIGURATION ---
-CSV_FILE = 'auction_items.csv'
-OUTPUT_DIR = 'generated_cards'
-FONT_FILE = 'fonts/Monoton-Regular.ttf'  # <-- Change this to your downloaded .ttf file
-FONT_SIZE_ITEM = 48
-FONT_SIZE_BID = 40
-QR_CODE_SIZE_PX = 300  # Size of the QR code in pixels
+# --- SETUP ---
+CSV_FILE = "auction_items.csv"
+CONFIG_FILE = "template_config.json"
+OUTPUT_DIR = "generated_cards"
+QR_CODE_SIZE_PX = 300
 
-# --- POSITIONS (You will need to fine-tune these!) ---
-# These are the (x, y) coordinates from the top-left corner.
-# You'll find these by trial and error.
-POSITIONS = {
-    'arcade-wolf.png': {
-        'item_name': (50, 600),
-        'starting_bid': (50, 700),
-        'qr_code': (50, 800)  # Position to paste the top-left corner of the QR code
-    },
-    'pizza-skate.png': {
-        'item_name': (75, 550),
-        'starting_bid': (75, 650),
-        'qr_code': (75, 750)
-    }
-}
+with open(CONFIG_FILE, "r") as file:
+    CONFIG = json.load(file)
 # ---------------------
 
 def create_card(item_name, starting_bid, auction_url, template_file):
@@ -38,28 +24,32 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         base_image = Image.open(f"templates/{template_file}").convert("RGBA")
         draw = ImageDraw.Draw(base_image)
 
-        # 2. Load fonts
-        font_item = ImageFont.truetype(FONT_FILE, FONT_SIZE_ITEM)
-        font_bid = ImageFont.truetype(FONT_FILE, FONT_SIZE_BID)
+        # 2. Get the template-specific configuration
+        template_config = CONFIG[template_file]
+        font_file_item = f"fonts/{template_config["Item"]["Font"]}"
+        font_size_item = template_config["Item"]["Size"]
+        font_file_bid = f"fonts/{template_config["Bid"]["Font"]}"
+        font_size_bid = template_config["Bid"]["Size"]
+        item_pos = (template_config["Item"]["X"], template_config["Item"]["Y"])
+        bid_pos = (template_config["Bid"]["X"], template_config["Bid"]["Y"])
+        qr_pos = (template_config["QR"]["X"], template_config["QR"]["Y"])
 
-        # 3. Generate the QR code on the fly
+        # 3. Load fonts
+        font_item = ImageFont.truetype(font_file_item, font_size_item)
+        font_bid = ImageFont.truetype(font_file_bid, font_size_bid)
+
+        # 4. Generate the QR code
         qr = qrcode.QRCode(version=1, box_size=10, border=4)
         qr.add_data(auction_url)
         qr.make(fit=True)
         qr_img = qr.make_image(fill_color="black", back_color="white").resize((QR_CODE_SIZE_PX, QR_CODE_SIZE_PX))
 
-        # 4. Get positions for this template
-        pos = POSITIONS.get(template_file)
-        if not pos:
-            print(f"Warning: No positions defined for {template_file}. Skipping.")
-            return
-
         # 5. Draw text onto the image
-        draw.text(pos['item_name'], item_name, font=font_item, fill="black")
-        draw.text(pos['starting_bid'], f"Starting Bid: {starting_bid}", font=font_bid, fill="black")
+        draw.text(item_pos, item_name, font=font_item, fill="black")
+        draw.text(bid_pos, f"Starting Bid: {starting_bid}", font=font_bid, fill="black")
         
         # 6. Paste the QR code onto the image
-        base_image.paste(qr_img, pos['qr_code'])
+        base_image.paste(qr_img, qr_pos)
 
         # 7. Save the final image
         # Create a safe filename
