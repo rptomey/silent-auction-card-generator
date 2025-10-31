@@ -3,12 +3,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -19,12 +21,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -35,12 +39,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -51,12 +57,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -67,12 +75,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -83,12 +93,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -99,12 +111,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
@@ -115,12 +129,14 @@
         "Item": {
             "X": 50,
             "Y": 600,
-            "Font": "PressStart2P.ttf"
+            "Font": "PressStart2P.ttf",
+            "Size": 48
         },
         "Bid": {
             "X": 50,
             "Y": 700,
-            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 40
         },
         "QR": {
             "X": 50,
