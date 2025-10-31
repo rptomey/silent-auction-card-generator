@@ -46,7 +46,7 @@ def create_card(item_name, starting_bid, auction_url, template_file):
 
         # 5. Draw text onto the image
         draw.text(item_pos, item_name, font=font_item, fill="black")
-        draw.text(bid_pos, f"Starting Bid: {starting_bid}", font=font_bid, fill="black")
+        draw.text(bid_pos, f"Starting Bid:\n{starting_bid}", font=font_bid, fill="black", align="center")
         
         # 6. Paste the QR code onto the image
         base_image.paste(qr_img, qr_pos)
