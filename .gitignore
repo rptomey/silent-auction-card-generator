@@ -4,3 +4,7 @@
 # Python stuff for virtual environments and environment variables
 venv/
 .env
+
+# Sensitive auction info
+auction_items.csv
+generated_cards/
