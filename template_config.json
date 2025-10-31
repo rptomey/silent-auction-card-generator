@@ -1,0 +1,130 @@
+{
+    "arcade-wolf.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "computer-controller.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "dino-ninja.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "guitar-cd.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "jordan-basketball.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "pizza-skate.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "school-stuff.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    },
+    "walkman-hightop.png": {
+        "Item": {
+            "X": 50,
+            "Y": 600,
+            "Font": "PressStart2P.ttf"
+        },
+        "Bid": {
+            "X": 50,
+            "Y": 700,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf"
+        },
+        "QR": {
+            "X": 50,
+            "Y": 800
+        }
+    }
+}
