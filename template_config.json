@@ -2,145 +2,145 @@
     "arcade-wolf.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 200,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 380,
+            "Y": 710
         }
     },
     "computer-controller.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "dino-ninja.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "guitar-cd.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "jordan-basketball.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "pizza-skate.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "school-stuff.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     },
     "walkman-hightop.png": {
         "Item": {
             "X": 50,
-            "Y": 600,
+            "Y": 150,
             "Font": "PressStart2P.ttf",
             "Size": 48
         },
         "Bid": {
             "X": 50,
-            "Y": 700,
+            "Y": 350,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 50,
-            "Y": 800
+            "X": 150,
+            "Y": 750
         }
     }
 }
