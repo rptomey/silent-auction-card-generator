@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 # --- CONFIGURATION ---
 CSV_FILE = 'auction_items.csv'
 OUTPUT_DIR = 'generated_cards'
-FONT_FILE = 'YourCool90sFont.ttf'  # <-- Change this to your downloaded .ttf file
+FONT_FILE = 'fonts/Monoton-Regular.ttf'  # <-- Change this to your downloaded .ttf file
 FONT_SIZE_ITEM = 48
 FONT_SIZE_BID = 40
 QR_CODE_SIZE_PX = 300  # Size of the QR code in pixels
@@ -15,15 +15,15 @@ QR_CODE_SIZE_PX = 300  # Size of the QR code in pixels
 # These are the (x, y) coordinates from the top-left corner.
 # You'll find these by trial and error.
 POSITIONS = {
-    'template_a.png': {
+    'arcade-wolf.png': {
         'item_name': (50, 600),
         'starting_bid': (50, 700),
-        'qr_code': (950, 550)  # Position to paste the top-left corner of the QR code
+        'qr_code': (50, 800)  # Position to paste the top-left corner of the QR code
     },
-    'template_b.png': {
+    'pizza-skate.png': {
         'item_name': (75, 550),
         'starting_bid': (75, 650),
-        'qr_code': (900, 500)
+        'qr_code': (75, 750)
     }
 }
 # ---------------------
@@ -35,7 +35,7 @@ def create_card(item_name, starting_bid, auction_url, template_file):
 
     try:
         # 1. Open the base template image
-        base_image = Image.open(template_file).convert("RGBA")
+        base_image = Image.open(f"templates/{template_file}").convert("RGBA")
         draw = ImageDraw.Draw(base_image)
 
         # 2. Load fonts
