@@ -20,21 +20,21 @@
     },
     "computer-controller.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
+            "X": 250,
+            "Y": 270,
             "Font": "PressStart2P.ttf",
-            "Size": 48,
-            "Width": 250
+            "Size": 42,
+            "Width": 420
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 215,
+            "Y": 630,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
-            "Y": 750
+            "X": 170,
+            "Y": 720
         }
     },
     "dino-ninja.png": {
@@ -42,18 +42,18 @@
             "X": 270,
             "Y": 275,
             "Font": "Bungee-Regular.ttf",
-            "Size": 52,
+            "Size": 58,
             "Width": 400
         },
         "Bid": {
-            "X": 425,
-            "Y": 640,
+            "X": 175,
+            "Y": 840,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
             "X": 380,
-            "Y": 730
+            "Y": 740
         }
     },
     "guitar-cd.png": {
@@ -96,11 +96,11 @@
     },
     "pizza-skate.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
-            "Font": "PressStart2P.ttf",
-            "Size": 48,
-            "Width": 250
+            "X": 150,
+            "Y": 180,
+            "Font": "Chicago Athletic Slab Serif 2.ttf",
+            "Size": 100,
+            "Width": 500
         },
         "Bid": {
             "X": 50,
@@ -115,20 +115,20 @@
     },
     "school-stuff.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
-            "Font": "PressStart2P.ttf",
-            "Size": 48,
-            "Width": 250
+            "X": 180,
+            "Y": 180,
+            "Font": "Chicago Athletic Slab Serif 2.ttf",
+            "Size": 110,
+            "Width": 450
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 500,
+            "Y": 650,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
+            "X": 450,
             "Y": 750
         }
     },
