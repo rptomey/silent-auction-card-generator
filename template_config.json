@@ -1,11 +1,11 @@
 {
     "arcade-wolf.png": {
         "Item": {
-            "X": 50,
-            "Y": 200,
+            "X": 220,
+            "Y": 260,
             "Font": "PressStart2P.ttf",
-            "Size": 48,
-            "Width": 250
+            "Size": 42,
+            "Width": 420
         },
         "Bid": {
             "X": 425,
@@ -39,21 +39,21 @@
     },
     "dino-ninja.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
-            "Font": "PressStart2P.ttf",
-            "Size": 48,
-            "Width": 250
+            "X": 220,
+            "Y": 260,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 42,
+            "Width": 420
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 425,
+            "Y": 640,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
-            "Y": 750
+            "X": 380,
+            "Y": 730
         }
     },
     "guitar-cd.png": {

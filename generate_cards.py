@@ -3,6 +3,7 @@ import qrcode
 import os
 import json
 from PIL import Image, ImageDraw, ImageFont
+import hashlib  # <-- NEW: Import the hash library
 
 # --- SETUP ---
 CSV_FILE = "auction_items.csv"
@@ -43,7 +44,7 @@ def wrap_text(text, font, max_width, draw):
 def create_card(item_name, starting_bid, auction_url, template_file):
     """Generates a single auction card."""
     
-    print(f"Generating card for: {item_name}")
+    print(f"Generating card for: {item_name} (Template: {template_file})")
 
     try:
         # 1. Open the base template image
@@ -79,14 +80,35 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         # 6. Paste the QR code onto the image
         base_image.paste(qr_img, qr_pos)
 
-        # 7. Save the final image
-        # Create a safe filename
-        safe_filename = "".join(c for c in item_name if c.isalnum() or c in (' ', '_')).rstrip()
-        output_path = os.path.join(OUTPUT_DIR, f"{safe_filename}.png")
+        # --- MODIFIED SECTION: 7. Save the final image ---
+        
+        # Create a unique, consistent hash for the filename.
+        # We combine item_name and template_file to ensure the hash is
+        # unique for each item *and* each template it's applied to.
+        unique_string = f"{item_name}::{template_file}"
+        
+        # Create a SHA-1 hash, encode the string to bytes,
+        # get the hex digest, and take the first 10 characters.
+        h = hashlib.sha1(unique_string.encode('utf-8'))
+        short_hash = h.hexdigest()[:10] 
+        
+        output_filename = f"{short_hash}.png"
+        output_path = os.path.join(OUTPUT_DIR, output_filename)
         base_image.save(output_path)
+        
+        print(f"  -> Saved as: {output_filename}")
+
+        # Return info for the manifest file
+        return {
+            "filename": output_filename,
+            "item_name": item_name,
+            "template": template_file
+        }
+        # --- END OF MODIFIED SECTION ---
 
     except Exception as e:
         print(f"Error processing {item_name}: {e}")
+        return None  # <-- Return None on failure
 
 # --- Main execution ---
 if __name__ == "__main__":
@@ -94,15 +116,30 @@ if __name__ == "__main__":
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
+    manifest_data = []  # <-- NEW: To store a map of hashes to item names
+
     # Read the CSV and generate cards
     with open(CSV_FILE, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
-            create_card(
+            # --- MODIFIED SECTION ---
+            # Capture the return value from the function
+            result = create_card(
                 item_name=row['ItemName'],
                 starting_bid=row['StartingBid'],
                 auction_url=row['AuctionURL'],
                 template_file=row['TemplateFile']
             )
+            # Add to manifest if card creation was successful
+            if result:
+                manifest_data.append(result)
+            # --- END OF MODIFIED SECTION ---
             
+    # --- NEW SECTION: Save the manifest file ---
+    manifest_path = os.path.join(OUTPUT_DIR, "_manifest.json")
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest_data, f, indent=4)
+    # --- END OF NEW SECTION ---
+
     print(f"\nDone! All cards saved in '{OUTPUT_DIR}' folder.")
+    print(f"A manifest file '_manifest.json' has been created mapping filenames to item names.")
