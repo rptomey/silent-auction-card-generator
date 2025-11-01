@@ -1,11 +1,11 @@
 {
     "arcade-wolf.png": {
         "Item": {
-            "X": 220,
-            "Y": 260,
-            "Font": "PressStart2P.ttf",
-            "Size": 42,
-            "Width": 420
+            "X": 210,
+            "Y": 320,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 48,
+            "Width": 450
         },
         "Bid": {
             "X": 425,
@@ -20,11 +20,11 @@
     },
     "computer-controller.png": {
         "Item": {
-            "X": 250,
-            "Y": 270,
-            "Font": "PressStart2P.ttf",
-            "Size": 42,
-            "Width": 420
+            "X": 230,
+            "Y": 280,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 48,
+            "Width": 450
         },
         "Bid": {
             "X": 215,
@@ -39,11 +39,11 @@
     },
     "dino-ninja.png": {
         "Item": {
-            "X": 270,
-            "Y": 275,
+            "X": 260,
+            "Y": 335,
             "Font": "Bungee-Regular.ttf",
-            "Size": 58,
-            "Width": 400
+            "Size": 48,
+            "Width": 450
         },
         "Bid": {
             "X": 175,
@@ -58,30 +58,30 @@
     },
     "guitar-cd.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
-            "Font": "PressStart2P.ttf",
+            "X": 200,
+            "Y": 225,
+            "Font": "Bungee-Regular.ttf",
             "Size": 48,
-            "Width": 250
+            "Width": 500
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 450,
+            "Y": 630,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
-            "Y": 750
+            "X": 400,
+            "Y": 720
         }
     },
     "jordan-basketball.png": {
         "Item": {
-            "X": 185,
-            "Y": 180,
-            "Font": "Chicago Athletic Slab Serif 2.ttf",
-            "Size": 100,
-            "Width": 500
+            "X": 210,
+            "Y": 195,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 48,
+            "Width": 450
         },
         "Bid": {
             "X": 335,
@@ -96,30 +96,30 @@
     },
     "pizza-skate.png": {
         "Item": {
-            "X": 150,
-            "Y": 180,
-            "Font": "Chicago Athletic Slab Serif 2.ttf",
-            "Size": 100,
-            "Width": 500
+            "X": 220,
+            "Y": 300,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 48,
+            "Width": 450
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 470,
+            "Y": 790,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
-            "Y": 750
+            "X": 165,
+            "Y": 700
         }
     },
     "school-stuff.png": {
         "Item": {
-            "X": 180,
-            "Y": 180,
-            "Font": "Chicago Athletic Slab Serif 2.ttf",
-            "Size": 110,
-            "Width": 450
+            "X": 200,
+            "Y": 310,
+            "Font": "Bungee-Regular.ttf",
+            "Size": 48,
+            "Width": 500
         },
         "Bid": {
             "X": 500,
@@ -134,21 +134,21 @@
     },
     "walkman-hightop.png": {
         "Item": {
-            "X": 50,
-            "Y": 150,
-            "Font": "PressStart2P.ttf",
+            "X": 200,
+            "Y": 250,
+            "Font": "Bungee-Regular.ttf",
             "Size": 48,
-            "Width": 250
+            "Width": 450
         },
         "Bid": {
-            "X": 50,
-            "Y": 350,
+            "X": 440,
+            "Y": 630,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
-            "X": 150,
-            "Y": 750
+            "X": 390,
+            "Y": 715
         }
     }
 }
