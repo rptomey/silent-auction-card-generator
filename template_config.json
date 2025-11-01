@@ -4,7 +4,8 @@
             "X": 50,
             "Y": 200,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 425,
@@ -22,7 +23,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -40,7 +42,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -58,7 +61,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -76,7 +80,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -94,7 +99,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -112,7 +118,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
@@ -130,7 +137,8 @@
             "X": 50,
             "Y": 150,
             "Font": "PressStart2P.ttf",
-            "Size": 48
+            "Size": 48,
+            "Width": 250
         },
         "Bid": {
             "X": 50,
