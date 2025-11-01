@@ -21,9 +21,9 @@ def wrap_text(text, font, max_width, draw):
     """
     words = text.split()
     lines = [] # Holds each line in the text box
-    current_line = [] # Holds the current line under evaluation.
+    current_line = [words[0]] # Holds the current line under evaluation.
 
-    for word in words:
+    for word in words[1:]:
         # Check the width of the current line with the new word added
         test_line = ' '.join(current_line + [word])
         width = draw.textlength(test_line, font=font)
@@ -38,7 +38,7 @@ def wrap_text(text, font, max_width, draw):
     if current_line:
         lines.append(' '.join(current_line))
 
-    return lines
+    return "\n".join(lines)
 
 def create_card(item_name, starting_bid, auction_url, template_file):
     """Generates a single auction card."""
@@ -57,6 +57,7 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         font_file_bid = f"fonts/{template_config["Bid"]["Font"]}"
         font_size_bid = template_config["Bid"]["Size"]
         item_pos = (template_config["Item"]["X"], template_config["Item"]["Y"])
+        item_width = template_config["Item"]["Width"]
         bid_pos = (template_config["Bid"]["X"], template_config["Bid"]["Y"])
         qr_pos = (template_config["QR"]["X"], template_config["QR"]["Y"])
 
@@ -71,7 +72,8 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         qr_img = qr.make_image(fill_color="black", back_color="white").resize((QR_CODE_SIZE_PX, QR_CODE_SIZE_PX))
 
         # 5. Draw text onto the image
-        draw.text(item_pos, item_name, font=font_item, fill="black")
+        item_name_wrapped = wrap_text(text=item_name, font=font_item, max_width=item_width, draw=draw)
+        draw.text(item_pos, item_name_wrapped, font=font_item, fill="black", align="center")
         draw.text(bid_pos, f"Starting Bid:\n{starting_bid}", font=font_bid, fill="black", align="center")
         
         # 6. Paste the QR code onto the image
