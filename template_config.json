@@ -77,10 +77,10 @@
     },
     "jordan-basketball.png": {
         "Item": {
-            "X": 210,
-            "Y": 185,
+            "X": 185,
+            "Y": 180,
             "Font": "Chicago Athletic Slab Serif 2.ttf",
-            "Size": 90,
+            "Size": 100,
             "Width": 500
         },
         "Bid": {
