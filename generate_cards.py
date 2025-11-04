@@ -41,6 +41,39 @@ def wrap_text(text, font, max_width, draw):
 
     return "\n".join(lines)
 
+def find_best_fit_font(text, font_file, max_width, max_height, start_size, min_size, draw):
+    """
+    Finds the largest font size that allows text to fit in a bounding box.
+    """
+    font_size = start_size
+    font = None # Default
+    wrapped_text = ""
+
+    while font_size >= min_size:
+        # Load the font at the current size
+        font = ImageFont.truetype(font=font_file, size=font_size)
+
+        # Wrap the text
+        wrapped_text = wrap_text(text=text, font=font, max_width=max_width, draw=draw)
+
+        # Get the *actual* bounding box of the wrapped, multiline text
+        # We use (0,0) as a temp origin; we only care about the width and height
+        bbox = draw.multiline_textbbox((0,0), wrapped_text, font=font, align="center")
+        text_height = bbox[3] - bbox[1] # bottom - top
+
+        # Check if it fits
+        if text_height <= max_height:
+            # Success! This font size fits.
+            return font, wrapped_text
+        
+        # If not, shring the font size and try again
+        font_size -= 2
+    
+    # If we fall out of the loop, it means even the min_size didn't fit.
+    # We'll just return the smallest font and its wrapped text.
+    print(f"  -> Warning: Text overflowed even at min size {min_size}pt.")
+    return font, wrapped_text
+
 def create_card(item_name, starting_bid, auction_url, template_file):
     """Generates a single auction card."""
     
@@ -53,17 +86,22 @@ def create_card(item_name, starting_bid, auction_url, template_file):
 
         # 2. Get the template-specific configuration
         template_config = CONFIG[template_file]
+
+        # Item
         font_file_item = f"fonts/{template_config["Item"]["Font"]}"
-        font_size_item = template_config["Item"]["Size"]
-        font_file_bid = f"fonts/{template_config["Bid"]["Font"]}"
-        font_size_bid = template_config["Bid"]["Size"]
+        font_size_min_item = template_config["Item"]["Size"]
+        font_size_max_item = template_config["Item"]["Size_Max"]
         item_pos = (template_config["Item"]["X"], template_config["Item"]["Y"])
         item_width = template_config["Item"]["Width"]
+        item_height = template_config["Item"]["Height"]
+
+        # Bid / QR
+        font_file_bid = f"fonts/{template_config["Bid"]["Font"]}"
+        font_size_bid = template_config["Bid"]["Size"]
         bid_pos = (template_config["Bid"]["X"], template_config["Bid"]["Y"])
         qr_pos = (template_config["QR"]["X"], template_config["QR"]["Y"])
 
-        # 3. Load fonts
-        font_item = ImageFont.truetype(font_file_item, font_size_item)
+        # 3. Load bid font only (item font is dynamic)
         font_bid = ImageFont.truetype(font_file_bid, font_size_bid)
 
         # 4. Generate the QR code
@@ -73,8 +111,32 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         qr_img = qr.make_image(fill_color="black", back_color="white").resize((QR_CODE_SIZE_PX, QR_CODE_SIZE_PX))
 
         # 5. Draw text onto the image
-        item_name_wrapped = wrap_text(text=item_name, font=font_item, max_width=item_width, draw=draw)
-        draw.text(item_pos, item_name_wrapped, font=font_item, fill="black", align="center")
+        # Find the best font size and wrapped text for the item name
+        font_item, item_name_wrapped = find_best_fit_font(
+            text=item_name,
+            font_file=font_file_item,
+            max_width=item_width,
+            max_height=item_height,
+            start_size=font_size_max_item,
+            min_size=font_size_min_item,
+            draw=draw
+        )
+        
+        # Calculate the center of the item name's bounding box
+        box_center_x = item_pos[0] + (item_width / 2)
+        box_center_y = item_pos[1] + (item_height / 2)
+
+        # Draw the item name text centered in the box
+        draw.multiline_text(
+            (box_center_x, box_center_y),
+            item_name_wrapped,
+            font=font_item,
+            fill="black",
+            align="center",
+            anchor="mm"
+        )
+
+        # Draw the starting bid text
         draw.text(bid_pos, f"Starting Bid:\n{starting_bid}", font=font_bid, fill="black", align="center")
         
         # 6. Paste the QR code onto the image

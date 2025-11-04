@@ -1,11 +1,13 @@
 {
     "arcade-wolf.png": {
         "Item": {
-            "X": 210,
-            "Y": 320,
+            "X": 200,
+            "Y": 220,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 400,
+            "Height": 350
         },
         "Bid": {
             "X": 425,
@@ -20,15 +22,17 @@
     },
     "computer-controller.png": {
         "Item": {
-            "X": 230,
-            "Y": 280,
+            "X": 250,
+            "Y": 270,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 420,
+            "Height": 400
         },
         "Bid": {
-            "X": 215,
-            "Y": 630,
+            "X": 480,
+            "Y": 800,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
@@ -39,11 +43,13 @@
     },
     "dino-ninja.png": {
         "Item": {
-            "X": 260,
-            "Y": 335,
+            "X": 280,
+            "Y": 300,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 380,
+            "Height": 420
         },
         "Bid": {
             "X": 175,
@@ -58,11 +64,13 @@
     },
     "guitar-cd.png": {
         "Item": {
-            "X": 200,
-            "Y": 225,
+            "X": 190,
+            "Y": 175,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 500
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 490,
+            "Height": 420
         },
         "Bid": {
             "X": 450,
@@ -77,30 +85,34 @@
     },
     "jordan-basketball.png": {
         "Item": {
-            "X": 210,
-            "Y": 195,
+            "X": 200,
+            "Y": 165,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 470,
+            "Height": 280
         },
         "Bid": {
-            "X": 335,
-            "Y": 640,
+            "X": 340,
+            "Y": 610,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
         "QR": {
             "X": 290,
-            "Y": 730
+            "Y": 700
         }
     },
     "pizza-skate.png": {
         "Item": {
             "X": 220,
-            "Y": 300,
+            "Y": 200,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 450,
+            "Height": 480
         },
         "Bid": {
             "X": 470,
@@ -115,15 +127,17 @@
     },
     "school-stuff.png": {
         "Item": {
-            "X": 200,
-            "Y": 310,
+            "X": 170,
+            "Y": 170,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 500
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 400,
+            "Height": 520
         },
         "Bid": {
-            "X": 500,
-            "Y": 650,
+            "X": 255,
+            "Y": 900,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
@@ -134,15 +148,17 @@
     },
     "walkman-hightop.png": {
         "Item": {
-            "X": 200,
-            "Y": 250,
+            "X": 170,
+            "Y": 230,
             "Font": "Bungee-Regular.ttf",
-            "Size": 48,
-            "Width": 450
+            "Size": 40,
+            "Size_Max": 120,
+            "Width": 450,
+            "Height": 450
         },
         "Bid": {
-            "X": 440,
-            "Y": 630,
+            "X": 195,
+            "Y": 775,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
         },
