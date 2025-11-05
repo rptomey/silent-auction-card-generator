@@ -8,6 +8,11 @@ This tool automates the creation of printable informational cards for silent auc
 - **Configurable Layouts:** Uses a JSON configuration file to precisely position text and QR codes for different template designs.
 - **Text Wrapping:** Automatically wraps long item names to fit within specified areas on the card.
 
+### Example Input / Output
+![Input](templates/pizza-skate.png){: style="height:83px"}
+->
+![Output](examples/example_output.png){: style="height:83px"}
+
 ## Prerequisites
 To run this tool, you need Python installed on your computer.
 - [How to install Python](https://www.python.org/about/gettingstarted/)
