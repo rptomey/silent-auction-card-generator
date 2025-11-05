@@ -37,7 +37,7 @@ It is highly recommended to use a virtual environment to keep dependencies organ
 
 ## Configuration
 
-### The Spreadsheet (`auction_items.csv`)
+### Items Spreadsheet (`auction_items.csv`)
 This file holds the data for each card. It requires the following headers:
 | **Header**     | **Description**                                                        |
 |----------------|------------------------------------------------------------------------|
@@ -68,7 +68,7 @@ This JSON file tells the script exactly where to place elements for each specifi
 - `Width` / `Height`: (For 'Item' only) Defines the bounding box for text wrapping.
 
 ## Usage
-1. Create and/or update the `auction_items.csv` file in the project root folder, using the [required schema](#the-spreadsheet-auction_itemscsv) and details for your auction items.
+1. Create and/or update the `auction_items.csv` file in the project root folder, using the [required schema](#items-spreadsheet-auction_itemscsv) and details for your auction items.
 2. Make sure all background template images are present in the `templates` folder.
 3. Run the script:
     ```Bash
