@@ -3,7 +3,7 @@ import qrcode
 import os
 import json
 from PIL import Image, ImageDraw, ImageFont
-import hashlib  # <-- NEW: Import the hash library
+import hashlib
 
 # --- SETUP ---
 CSV_FILE = "auction_items.csv"
