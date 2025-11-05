@@ -9,22 +9,9 @@ This tool automates the creation of printable informational cards for silent auc
 - **Text Wrapping:** Automatically wraps long item names to fit within specified areas on the card.
 
 ### Example Input / Output
-<div class="grid cards" markdown>
-
--   Blank template input
-
-    ---
-    ![Input](templates/pizza-skate.png)
-
--   Output with text and QR code
-
-    ---
-    ![Output](examples/example_output.png)
-
-</div>
-![Input](templates/pizza-skate.png)
-->
-![Output](examples/example_output.png)
+|![Input](templates/pizza-skate.png)|![Output](examples/example_output.png)|
+|:-:|:-:|
+|Blank template input|Output with text and QR code|
 
 ## Prerequisites
 To run this tool, you need Python installed on your computer.
