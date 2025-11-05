@@ -15,7 +15,7 @@ with open(CONFIG_FILE, "r") as file:
     CONFIG = json.load(file)
 # ---------------------
 
-# https://dev.to/emiloju/wrap-and-render-multiline-text-on-images-using-pythons-pillow-library-2ppp
+# Credit to tutorial at https://dev.to/emiloju/wrap-and-render-multiline-text-on-images-using-pythons-pillow-library-2ppp
 def wrap_text(text, font, max_width, draw):
     """
     Wraps text to fit within the max_width.
