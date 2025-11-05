@@ -142,7 +142,7 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         # 6. Paste the QR code onto the image
         base_image.paste(qr_img, qr_pos)
 
-        # --- MODIFIED SECTION: 7. Save the final image ---
+        # 7. Save the final image
         
         # Create a unique, consistent hash for the filename.
         # We combine item_name and template_file to ensure the hash is
@@ -166,25 +166,22 @@ def create_card(item_name, starting_bid, auction_url, template_file):
             "item_name": item_name,
             "template": template_file
         }
-        # --- END OF MODIFIED SECTION ---
 
     except Exception as e:
         print(f"Error processing {item_name}: {e}")
         return None  # <-- Return None on failure
 
-# --- Main execution ---
 if __name__ == "__main__":
     # Create output directory if it doesn't exist
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
-    manifest_data = []  # <-- NEW: To store a map of hashes to item names
+    manifest_data = []
 
     # Read the CSV and generate cards
     with open(CSV_FILE, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
-            # --- MODIFIED SECTION ---
             # Capture the return value from the function
             result = create_card(
                 item_name=row['ItemName'],
@@ -192,16 +189,14 @@ if __name__ == "__main__":
                 auction_url=row['AuctionURL'],
                 template_file=row['TemplateFile']
             )
+
             # Add to manifest if card creation was successful
             if result:
                 manifest_data.append(result)
-            # --- END OF MODIFIED SECTION ---
-            
-    # --- NEW SECTION: Save the manifest file ---
+
     manifest_path = os.path.join(OUTPUT_DIR, "_manifest.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, indent=4)
-    # --- END OF NEW SECTION ---
 
     print(f"\nDone! All cards saved in '{OUTPUT_DIR}' folder.")
     print(f"A manifest file '_manifest.json' has been created mapping filenames to item names.")
