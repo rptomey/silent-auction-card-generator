@@ -9,11 +9,17 @@
             "Width": 400,
             "Height": 350
         },
-        "Bid": {
+        "Value": {
             "X": 425,
             "Y": 620,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 280,
+            "Y": 970,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 380,
@@ -22,19 +28,25 @@
     },
     "computer-controller.png": {
         "Item": {
-            "X": 250,
+            "X": 200,
             "Y": 270,
             "Font": "Bungee-Regular.ttf",
             "Size": 40,
             "Size_Max": 120,
-            "Width": 420,
+            "Width": 470,
             "Height": 400
         },
-        "Bid": {
+        "Value": {
             "X": 480,
             "Y": 800,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 470,
+            "Y": 990,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 170,
@@ -51,11 +63,17 @@
             "Width": 380,
             "Height": 420
         },
-        "Bid": {
+        "Value": {
             "X": 175,
             "Y": 840,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 220,
+            "Y": 1000,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 380,
@@ -72,11 +90,17 @@
             "Width": 490,
             "Height": 420
         },
-        "Bid": {
+        "Value": {
             "X": 450,
             "Y": 630,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 280,
+            "Y": 1020,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 400,
@@ -93,11 +117,17 @@
             "Width": 470,
             "Height": 280
         },
-        "Bid": {
+        "Value": {
             "X": 340,
             "Y": 610,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 170,
+            "Y": 1000,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 290,
@@ -114,11 +144,17 @@
             "Width": 450,
             "Height": 480
         },
-        "Bid": {
+        "Value": {
             "X": 470,
             "Y": 790,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 490,
+            "Y": 1015,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 165,
@@ -127,19 +163,25 @@
     },
     "school-stuff.png": {
         "Item": {
-            "X": 170,
-            "Y": 170,
+            "X": 160,
+            "Y": 230,
             "Font": "Bungee-Regular.ttf",
             "Size": 40,
             "Size_Max": 120,
-            "Width": 400,
+            "Width": 500,
             "Height": 520
         },
-        "Bid": {
+        "Value": {
             "X": 255,
             "Y": 900,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 260,
+            "Y": 1040,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 450,
@@ -153,14 +195,20 @@
             "Font": "Bungee-Regular.ttf",
             "Size": 40,
             "Size_Max": 120,
-            "Width": 450,
+            "Width": 470,
             "Height": 450
         },
-        "Bid": {
+        "Value": {
             "X": 195,
             "Y": 775,
             "Font": "RobotoCondensed-VariableFont_wght.ttf",
             "Size": 40
+        },
+        "Lot": {
+            "X": 280,
+            "Y": 990,
+            "Font": "RobotoCondensed-VariableFont_wght.ttf",
+            "Size": 20
         },
         "QR": {
             "X": 390,

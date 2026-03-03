@@ -20,21 +20,28 @@ def wrap_text(text, font, max_width, draw):
     Wraps text to fit within the max_width.
     """
     words = text.split()
-    lines = [] # Holds each line in the text box
-    current_line = [words[0]] # Holds the current line under evaluation.
+    if not words:
+        return ""
 
-    for word in words[1:]:
-        # Check the width of the current line with the new word added
-        test_line = ' '.join(current_line + [word])
-        width = draw.textlength(test_line, font=font)
-        if width <= max_width:
+    lines = []
+    current_line = []
+
+    for word in words:
+        # If the current line is empty, add the word to start the line.
+        if not current_line:
             current_line.append(word)
         else:
-            # If the line is too wide, finalize the current line and start a new one
-            lines.append(' '.join(current_line))
-            current_line = [word]
+            # Check the width of the line with the new word added
+            test_line = ' '.join(current_line + [word])
+            width = draw.textlength(test_line, font=font)
+            if width <= max_width:
+                current_line.append(word)
+            else:
+                # If too wide, finalize the current line and start a new one
+                lines.append(' '.join(current_line))
+                current_line = [word]
 
-    # Add the last line
+    # Add any remaining words in the final line
     if current_line:
         lines.append(' '.join(current_line))
 
@@ -42,10 +49,10 @@ def wrap_text(text, font, max_width, draw):
 
 def find_best_fit_font(text, font_file, max_width, max_height, start_size, min_size, draw):
     """
-    Finds the largest font size that allows text to fit in a bounding box.
+    Finds the largest font size that allows text to fit in a bounding box (both width and height).
     """
     font_size = start_size
-    font = None # Default
+    font = None
     wrapped_text = ""
 
     while font_size >= min_size:
@@ -55,25 +62,24 @@ def find_best_fit_font(text, font_file, max_width, max_height, start_size, min_s
         # Wrap the text
         wrapped_text = wrap_text(text=text, font=font, max_width=max_width, draw=draw)
 
-        # Get the *actual* bounding box of the wrapped, multiline text
-        # We use (0,0) as a temp origin; we only care about the width and height
+        # Get the actual bounding box of the wrapped, multiline text
         bbox = draw.multiline_textbbox((0,0), wrapped_text, font=font, align="center")
-        text_height = bbox[3] - bbox[1] # bottom - top
+        text_width = bbox[2] - bbox[0]   # right - left
+        text_height = bbox[3] - bbox[1]  # bottom - top
 
-        # Check if it fits
-        if text_height <= max_height:
-            # Success! This font size fits.
+        # CRITICAL FIX: Check if it fits BOTH vertically and horizontally
+        if text_height <= max_height and text_width <= max_width:
+            # Success! This font size fits entirely within the box.
             return font, wrapped_text
         
-        # If not, shring the font size and try again
+        # If not, shrink the font size and try again
         font_size -= 2
     
     # If we fall out of the loop, it means even the min_size didn't fit.
-    # We'll just return the smallest font and its wrapped text.
-    print(f"  -> Warning: Text overflowed even at min size {min_size}pt.")
+    print(f"  -> Warning: Text overflowed even at min size {min_size}pt. Consider a smaller min_size or shorter text.")
     return font, wrapped_text
 
-def create_card(item_name, starting_bid, auction_url, template_file):
+def create_card(lot, item_name, item_value, auction_url, template_file):
     """Generates a single auction card."""
     
     print(f"Generating card for: {item_name} (Template: {template_file})")
@@ -94,14 +100,18 @@ def create_card(item_name, starting_bid, auction_url, template_file):
         item_width = template_config["Item"]["Width"]
         item_height = template_config["Item"]["Height"]
 
-        # Bid / QR
-        font_file_bid = f"fonts/{template_config["Bid"]["Font"]}"
-        font_size_bid = template_config["Bid"]["Size"]
-        bid_pos = (template_config["Bid"]["X"], template_config["Bid"]["Y"])
+        # Value / QR / Lot
+        font_file_value = f"fonts/{template_config["Value"]["Font"]}"
+        font_size_value = template_config["Value"]["Size"]
+        value_pos = (template_config["Value"]["X"], template_config["Value"]["Y"])
         qr_pos = (template_config["QR"]["X"], template_config["QR"]["Y"])
+        font_file_lot = f"fonts/{template_config["Lot"]["Font"]}"
+        font_size_lot = template_config["Lot"]["Size"]
+        lot_pos = (template_config["Lot"]["X"], template_config["Lot"]["Y"])
 
-        # 3. Load bid font only (item font is dynamic)
-        font_bid = ImageFont.truetype(font_file_bid, font_size_bid)
+        # 3. Load value and lot fonts (item font is dynamic)
+        font_value = ImageFont.truetype(font_file_value, font_size_value)
+        font_lot = ImageFont.truetype(font_file_lot, font_size_lot)
 
         # 4. Generate the QR code
         qr = qrcode.QRCode(version=1, box_size=10, border=4)
@@ -135,8 +145,11 @@ def create_card(item_name, starting_bid, auction_url, template_file):
             anchor="mm"
         )
 
-        # Draw the starting bid text
-        draw.text(bid_pos, f"Starting Bid:\n{starting_bid}", font=font_bid, fill="black", align="center")
+        # Draw the item value text
+        draw.text(value_pos, f"Value:\n{item_value}", font=font_value, fill="black", align="center")
+
+        # Draw the item lot text
+        draw.text(lot_pos, f"Lot #{lot}", font=font_lot, fill="black", align="center")
         
         # 6. Paste the QR code onto the image
         base_image.paste(qr_img, qr_pos)
@@ -183,8 +196,9 @@ if __name__ == "__main__":
         for row in reader:
             # Capture the return value from the function
             result = create_card(
+                lot=row["Lot"],
                 item_name=row['ItemName'],
-                starting_bid=row['StartingBid'],
+                item_value=row['ItemValue'],
                 auction_url=row['AuctionURL'],
                 template_file=row['TemplateFile']
             )
